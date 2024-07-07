@@ -1,18 +1,26 @@
 import React, { Component } from "react";
 
 class Home extends Component{
-    myfn(e) {
-        console.log(e.target.value)
+    constructor(props) {
+        super(props)
+        this.state = {value: 'Jay Shri Ram'}
     }
+
+    myfnc(e) {
+        console.log(e.target.value)
+        this.setState({value: e.target.value})
+    }
+
     render(){
-        const myfnc = (e) => {
-            console.log(e.target.value)
-        }
         return(
-            <div>
-                <h1>Home page contents details</h1>
-                <input type="text" onChange={ myfnc } />
-            </div>
+            <section className="container py-5 text-center">
+                <div className="row py-lg-5">
+                    <h1>Home page contents details</h1>
+                    <input type="text" onChange={ (e) => this.myfnc(e) } className="form-control text-center form-control-lg" />
+                    <br />
+                    <h2 className="py-5">{ this.state.value }</h2>
+                </div>
+            </section>
         )
     }
 }

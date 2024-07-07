@@ -38,7 +38,7 @@ function Header() {
     <header>
       <Navbar bg="dark" data-bs-theme="dark" expand="lg">
         <Container>
-          <Navbar.Brand href="/" className='logo'><span class="soft">SOFT</span><span class="dottxt">dot<span class='dot'>.</span></span></Navbar.Brand>
+          <Navbar.Brand href="/" className='logo'><span className="soft">SOFT</span><span className="dottxt">dot<span className='dot'>.</span></span></Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
