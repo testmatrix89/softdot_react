@@ -1,0 +1,37 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap'); */
+@import url('fonts.css');
+body {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 800;
+}
+.logo .soft{
+  font-weight: 800;
+}
+.logo .dottxt{
+  font-weight: 200;
+}
+.logo .dot{
+  color: red;
+  font-size: 72px;
+  line-height: 0;
+}
+
+.message{
+  background: #242a2f;
+  padding: 20px;
+  height: 230px;
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
