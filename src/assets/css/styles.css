@@ -51,7 +51,7 @@ body {
   background: linear-gradient(180deg, #307e6c, #2b996d);
 }
 
-.input-group {
+.user-input-group {
   display: flex;
   justify-content: space-evenly;
   gap: 1.5rem;

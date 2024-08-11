@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 export default function UserInput({ userInput, onChange }) {
   return (
     <section id='user-input'>
-      <div className='input-group'>
+      <div className='user-input-group'>
         <p>
           <label >Initial Investment</label>
           <input type='number' value={userInput.initialInvestment} onChange={(event) => onChange('initialInvestment', event.target.value)} required />
@@ -14,7 +14,7 @@ export default function UserInput({ userInput, onChange }) {
         </p>
       </div>
 
-      <div className='input-group'>
+      <div className='user-input-group'>
         <p>
           <label >Expected Return</label>
           <input type='number' value={userInput.expectedReturn} onChange={(event) => onChange('expectedReturn', event.target.value)} required />
