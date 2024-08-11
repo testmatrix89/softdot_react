@@ -18,6 +18,7 @@ const INITIAL_GAME_BOARD = [
 
 function deriveActivePlayer(gameTurns){
   let currentPlayer = 'X';
+
   if (gameTurns.length > 0 && gameTurns[0].player === 'X') {
     currentPlayer = 'O';
   }
@@ -57,15 +58,19 @@ function deriveGameBoard(gameTurns) {
 }
 
 export default function TicTacToe() {
+  const [isResetDisable, setIsResetDisable] = useState(true)
   const [players, setPlayers] = useState(PLAYERS);
   const [gameTurns, setGameTurns] = useState([]);
-  const currentPlayer = deriveActivePlayer(gameTurns);
+  const [changeActivePlayer, setChangeActivePlayer] = useState('X')
+
+  const currentPlayer = gameTurns.length == 0 ? changeActivePlayer : deriveActivePlayer(gameTurns);
   const gameBoard = deriveGameBoard(gameTurns);
   const winner = deriveWinner(gameBoard, players);
   const hasDraw = gameTurns.length === 9 && !winner;
 
   function handleSelectSquare(rowIndex, colIndex){
     // setActivePlayer((curActivePlayer) => curActivePlayer === 'X' ? 'O' : 'X');
+    setIsResetDisable(reset => reset = false);
     setGameTurns((prevTurns) => {
       deriveActivePlayer(prevTurns);
 
@@ -76,6 +81,12 @@ export default function TicTacToe() {
   };
 
   function handleRestart(){
+    setIsResetDisable(reset => reset = true);
+    setGameTurns([]);
+  }
+
+  function resetGameNow(){
+    setIsResetDisable(reset => reset = true);
     setGameTurns([]);
   }
 
@@ -88,14 +99,20 @@ export default function TicTacToe() {
     })
   }
 
+  function setActivePlayer(event) {
+    setChangeActivePlayer(event.target.value);
+    console.log(event.target.value)
+  }
+
   return <main>
     <div id='game-container'>
       <ol id='players' className='highlight-player'>
-        <Player initialName={PLAYERS.X} symbol="X" isActive={ currentPlayer === 'X' } onChangeName={handlePlayerNameChange} />
-        <Player initialName={PLAYERS.O} symbol="O" isActive={ currentPlayer === 'O' } onChangeName={handlePlayerNameChange} />
+        <Player initialName={PLAYERS.X} symbol="X" isActive={ currentPlayer === 'X' } onChangeName={handlePlayerNameChange} handleActivePlayer={setActivePlayer} />
+        <Player initialName={PLAYERS.O} symbol="O" isActive={ currentPlayer === 'O' } onChangeName={handlePlayerNameChange} handleActivePlayer={setActivePlayer} />
       </ol>
       {(winner || hasDraw) && <GameOver winner={winner} restartMatch={handleRestart} />}
       <GameBoard onSelectSquare={handleSelectSquare} board={ gameBoard } />
+      <div className='text-center'><button onClick={resetGameNow} disabled={isResetDisable}>Reset This Game Now!</button></div>
     </div>
     <Log turns={gameTurns} />
   </main>
