@@ -7,8 +7,7 @@ class Home extends Component{
     }
 
     myfnc(e) {
-        console.log(e.target.value)
-        this.setState({value: e.target.value})
+        this.setState({value: e.target.value});
     }
 
     render(){

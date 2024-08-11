@@ -44,7 +44,11 @@ function Header() {
             <Nav className="me-auto">
               <Nav.Link as={ Link } to="/home" className='nav-link'>Home</Nav.Link>
               <Nav.Link as={ Link } to="/about" className='nav-link'>About</Nav.Link>
+              <Nav.Link as={ Link } to="/services" className='nav-link'>Services</Nav.Link>
+              <Nav.Link as={ Link } to="/products" className='nav-link'>Products</Nav.Link>
+              <Nav.Link as={ Link } to="/works" className='nav-link'>Works</Nav.Link>
               <Nav.Link as={ Link } to="/contact" className='nav-link'>contact</Nav.Link>
+              <Nav.Link as={ Link } to="/games" className='nav-link'>Games</Nav.Link>
             </Nav>
             <Nav>
               <Navbar.Text className='text-info'>

@@ -6,6 +6,8 @@ import About from './pages/about';
 import Contact from './pages/contact';
 import Services from './pages/services';
 import Works from './pages/works';
+import Products from './pages/products';
+import Games from './pages/games';
 
 class App extends Component {
   render(){
@@ -17,8 +19,10 @@ class App extends Component {
           <Route path="/home" element={ <Home /> } />
           <Route path="/about" element={ <About/> } />
           <Route path="/contact" element={ <Contact /> } />
-          <Route path="/Sevices" element={ <Services /> } />
-          <Route path="/Works" element={ <Works /> } />
+          <Route path="/services" element={ <Services /> } />
+          <Route path="/products" element={ <Products /> } />
+          <Route path="/works" element={ <Works /> } />
+          <Route path="/games" element={ <Games /> } />
         </Routes>
       </Router>
     )
