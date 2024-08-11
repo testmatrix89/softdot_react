@@ -5,7 +5,7 @@ import TicTacToe from '../components/games/ticTacToe';
 
 export default function Games() {
   return (
-    <div>
+    <div className='tic-toc-toe-game-section'>
       <header>
         <img src={LogoImg} />
         <h1>Tic Tac Toe</h1>
