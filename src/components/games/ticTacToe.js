@@ -37,10 +37,9 @@ function deriveWinner(gameBoard, players) {
       firstSquareSymbol === secondSquareSymbol && 
       firstSquareSymbol === thirdSquareSymbol
     ){
-      winner = PLAYERS[firstSquareSymbol];
+      winner = players[firstSquareSymbol];
     }
   }
-
   return winner;
 }
 
@@ -58,7 +57,7 @@ function deriveGameBoard(gameTurns) {
 }
 
 export default function TicTacToe() {
-  const [players, setPlayers] = useState(PLAYERS)
+  const [players, setPlayers] = useState(PLAYERS);
   const [gameTurns, setGameTurns] = useState([]);
   const currentPlayer = deriveActivePlayer(gameTurns);
   const gameBoard = deriveGameBoard(gameTurns);
