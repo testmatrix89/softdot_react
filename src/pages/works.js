@@ -1,11 +1,15 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import FinalCountDownBoard from '../components/games/FinalCountDown/FinalCountDownBoard';
 
 class Works extends Component {
   render() {
     return (
-      <div>
-        <h1>Works</h1>
-      </div>
+      <section className='final-count-down-section'>
+        <div className='container'>
+          <h1>Works CountDown</h1>
+          <FinalCountDownBoard />
+        </div>  
+      </section>
     )
   }
 }
