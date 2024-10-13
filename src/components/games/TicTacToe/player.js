@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 export default function Player({ initialName, symbol, isActive, onChangeName, handleActivePlayer }) {
   const [playerName, setPlayerName] = useState(initialName)
   const [isEditing, setIsEditing] = useState(false);
+  
   function handleEditClick(){
     setIsEditing(editing => !editing);
     if(isEditing){
@@ -23,7 +24,7 @@ export default function Player({ initialName, symbol, isActive, onChangeName, ha
 
   return (
     <li className={ isActive ? 'active' : undefined }>
-      <input type='radio' name='active_player' onClick={handleActivePlayer} value={ symbol } checked={isActive} />
+      <input type='radio' name='active_player' onChange={handleActivePlayer} value={ symbol } checked={isActive} />
       <span className='player'>
         {editablePlayerName}
         <span className='player-symbol'>{ symbol }</span>
